@@ -1,0 +1,26 @@
+name: MiniLedger CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install API dependencies
+        working-directory: backend
+        run: npm install --no-audit --no-fund
+      - name: Check backend TypeScript
+        working-directory: backend
+        run: npm run typecheck
+      - name: Test API validation
+        working-directory: backend
+        run: npm test
+      - name: Check mobile TypeScript
+        working-directory: app
+        run: |
+          npm install --no-audit --no-fund
+          npm run typecheck

@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "MiniLedger",
+    "slug": "miniledger",
+    "scheme": "miniledger",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.example.miniledger" },
+    "android": { "package": "com.example.miniledger", "edgeToEdgeEnabled": true },
+    "plugins": []
+  }
+}
